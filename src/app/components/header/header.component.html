@@ -1,0 +1,13 @@
+<header class="card hero-section">
+  <div class="hero-content">
+    <h1 style="font-size: 2.5rem; color: #f8fafc; margin-bottom: 0.5rem;">{{ info.name }}</h1>
+    <h2 style="color: #94a3b8; font-weight: 400; margin-bottom: 1.5rem;">{{ info.role }}</h2>
+    
+    <div class="contact-links" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <span class="tag">📍 {{ info.location }}</span>
+      <span class="tag">📞 {{ info.phone }}</span>
+      <a href="mailto:{{ info.email }}" class="tag">✉️ Email Me</a>
+      <a href="https://{{ info.linkedin }}" target="_blank" class="tag">🔗 LinkedIn</a>
+    </div>
+  </div>
+</header>
