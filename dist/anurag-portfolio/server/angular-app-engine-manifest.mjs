@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/',
+  basePath: 'https://github.com/anuragk9/anurag-portfolio-v1',
   allowedHosts: [],
   supportedLocales: {
   "en-US": ""
