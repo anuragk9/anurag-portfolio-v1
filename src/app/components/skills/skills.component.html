@@ -1,27 +1,9 @@
-<section class="card skills-section">
-  <h3><span style="font-size: 1.2rem;">🛠️</span> Technical Arsenal</h3>
-
-  <div class="filter-controls" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-    <button *ngFor="let cat of categories" 
-            (click)="setCategory(cat)" 
-            class="tag"
-            [style.background]="activeCategory === cat ? '#38bdf8' : 'rgba(56, 189, 248, 0.1)'"
-            [style.color]="activeCategory === cat ? '#0f172a' : '#38bdf8'"
-            style="border: none; font-family: inherit; font-size: 0.9rem;">
-      {{ cat }}
-    </button>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+  <div *ngFor="let skill of skillsData" 
+       style="display: flex; flex-direction: column; align-items: center; transition: transform 0.3s ease; cursor: pointer;"
+       onmouseover="this.style.transform='scale(1.2)'"
+       onmouseout="this.style.transform='scale(1)'">
+    <i [class]="skill.icon" style="font-size: clamp(3.5rem, 8vw, 5rem); margin-bottom: 0.8rem; text-shadow: 0px 4px 10px rgba(0,0,0,0.2);"></i>
+    <span style="color: #cbd5e1; font-size: 1rem; font-weight: 500; text-align: center;">{{ skill.name }}</span>
   </div>
-
-  <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-    <div *ngFor="let group of filteredSkills" style="background: #0f172a; padding: 1.2rem; border-radius: 8px; border: 1px solid #1e293b;">
-      <h4 style="color: #f8fafc; margin-bottom: 0.8rem; font-size: 1rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem;">
-        {{ group.category }}
-      </h4>
-      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-        <span *ngFor="let item of group.items" style="color: #cbd5e1; background: #1e293b; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; border: 1px solid #334155;">
-          {{ item }}
-        </span>
-      </div>
-    </div>
-  </div>
-</section>
+</div>

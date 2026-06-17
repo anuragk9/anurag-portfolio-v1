@@ -10,20 +10,6 @@ import { PORTFOLIO_DATA } from '../../data/portfolio-data';
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
+  // We just pass the flat array of icon data directly to the template now
   skillsData = PORTFOLIO_DATA.skills;
-  activeCategory = 'All';
-
-  // Automatically generate filter buttons based on your data categories
-  categories = ['All', ...this.skillsData.map(s => s.category)];
-
-  setCategory(category: string) {
-    this.activeCategory = category;
-  }
-
-  get filteredSkills() {
-    if (this.activeCategory === 'All') {
-      return this.skillsData;
-    }
-    return this.skillsData.filter(s => s.category === this.activeCategory);
-  }
 }

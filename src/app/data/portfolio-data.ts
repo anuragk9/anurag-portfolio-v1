@@ -9,11 +9,14 @@ export const PORTFOLIO_DATA = {
     summary: 'Senior Java Backend Engineer with 7+ years of experience designing, modernizing, and deploying enterprise-grade microservices using Java 8/17 and Spring Boot 2/3. Advocate of TDD and AI-assisted development.'
   },
   skills: [
-    { category: 'Languages', items: ['Java 8', 'Java 17'] },
-    { category: 'Frameworks', items: ['Spring Boot 2/3', 'Spring MVC', 'Spring Security', 'Hibernate', 'JPA'] },
-    { category: 'Cloud & DevOps', items: ['AWS (EC2, S3, IAM, CloudWatch)', 'Docker', 'Kubernetes', 'Jenkins', 'AWS CodePipeline', 'Terraform'] },
-    { category: 'Integration & Middleware', items: ['SnapLogic'] },
-    { category: 'Databases', items: ['PostgreSQL', 'Oracle', 'MongoDB'] }
+    { name: 'Java', icon: 'devicon-java-plain colored' },
+    { name: 'Spring Boot', icon: 'devicon-spring-original colored' },
+    { name: 'AWS', icon: 'devicon-amazonwebservices-plain-wordmark colored' },
+    { name: 'Kubernetes', icon: 'devicon-kubernetes-plain colored' },
+    { name: 'Docker', icon: 'devicon-docker-plain colored' },
+    { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored' },
+    { name: 'Hibernate', icon: 'devicon-hibernate-plain colored' },
+    { name: 'Git', icon: 'devicon-git-plain colored' }
   ],
   experience: [
     {
