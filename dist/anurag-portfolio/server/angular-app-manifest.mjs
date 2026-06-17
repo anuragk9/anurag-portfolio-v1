@@ -2,19 +2,19 @@
 export default {
   bootstrap: () => import('./main.server.mjs').then(m => m.default),
   inlineCriticalCss: true,
-  baseHref: 'https://github.com/anuragk9/anurag-portfolio-v1',
+  baseHref: '/anurag-portfolio-v1/',
   locale: undefined,
   routes: [
   {
     "renderMode": 2,
-    "route": "/anuragk9/anurag-portfolio-v1"
+    "route": "/anurag-portfolio-v1"
   }
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 1526, hash: 'f004b293f0f3dd82c754db9636807c6c99544fb4b508da8e2a0298d33a1d731f', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 1227, hash: '47b27be2bb3555dcf2e7992327f3d152e62c5c880e243d40e2ec46addb1459b5', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'index.html': {size: 20372, hash: 'e79f4e47042e9f4918b8bd22f9457e12178368acfa7dfb1966f9a522ebae5dfb', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
+    'index.csr.html': {size: 1500, hash: 'ae6a95e61425cc44809510246153ae4bc072aa64be68161a04473f6f49a9d158', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 1201, hash: '2a6c6f015c0761657d019bb72190daaa86af7f1b1d7014772ecd098bac6dd518', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'index.html': {size: 20346, hash: '34b9afde69db42d211eab57c4c4265feb3fd07cb5defb3a59beea09d0dcf1fc0', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
     'styles-DTSMR2ZO.css': {size: 867, hash: '86HZwhm2Csc', text: () => import('./assets-chunks/styles-DTSMR2ZO_css.mjs').then(m => m.default)}
   },
 };

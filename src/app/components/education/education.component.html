@@ -1,21 +1,26 @@
-<section class="card education-section" style="margin-bottom: 0;">
-  <h3><span style="font-size: 1.2rem;">🎓</span> Education</h3>
-  
-  <div style="display: grid; gap: 1rem;">
-    <div *ngFor="let edu of educationData" style="background: #0f172a; padding: 1.5rem; border-radius: 8px; border: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-      
-      <div>
-        <h4 style="color: #f8fafc; font-size: 1.15rem; margin-bottom: 0.25rem;">{{ edu.degree }}</h4>
-        <p style="color: #94a3b8; font-size: 0.95rem;">{{ edu.institution }}</p>
-      </div>
-      
-      <div style="text-align: right;">
-        <span class="tag" style="background: #1e293b; border: 1px solid #334155; color: #cbd5e1; margin: 0;">{{ edu.year }}</span>
-        <p *ngIf="edu.details" style="color: #38bdf8; font-size: 0.85rem; margin-top: 0.5rem; font-weight: 500;">
-          {{ edu.details }}
-        </p>
-      </div>
-      
+<section class="full-width-section" id="education">
+  <div class="split-container">
+    
+    <!-- Left Side: Lottie Animation -->
+    <div class="graphic-side">
+      <ng-lottie [options]="options" width="100%" height="400px"></ng-lottie>
     </div>
+
+    <!-- Right Side: Education Content -->
+    <div class="content-side">
+      <h3 class="section-title">Education</h3>
+      
+      <div class="edu-grid">
+        <div *ngFor="let edu of educationData" class="edu-card">
+          <div class="edu-header">
+            <h4>{{ edu.degree }}</h4>
+            <span class="edu-year">{{ edu.year }}</span>
+          </div>
+          <p class="institution">{{ edu.institution }}</p>
+          <p *ngIf="edu.details" class="edu-details">{{ edu.details }}</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>

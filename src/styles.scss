@@ -57,3 +57,10 @@ body::after {
   pointer-events: none; /* Ensures buttons underneath are still clickable */
   opacity: 0.03; /* Extremely subtle - just enough to add depth */
 }
+html {
+  /* Enables native smooth scrolling globally */
+  scroll-behavior: smooth;
+  
+  /* Adds a 50px buffer so the section title isn't glued to the top of the monitor when you arrive */
+  scroll-padding-top: 50px; 
+}

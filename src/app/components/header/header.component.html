@@ -1,3 +1,10 @@
+<nav class="top-nav">
+  <div class="nav-links">
+    <button (click)="scrollToSection('about')" class="nav-item">About</button>
+    <button (click)="scrollToSection('experience')" class="nav-item">Experience</button>
+    <button (click)="scrollToSection('education')" class="nav-item">Education</button>
+  </div>
+</nav>
 <header class="hero-section">
   <div class="hero-container">
     
@@ -17,9 +24,9 @@
   </p>
   
   <div class="action-buttons">
-    <a href="#experience" class="btn btn-primary">View Experience</a>
-    <a href="mailto:{{ info.email }}" class="btn btn-secondary">Let's Connect</a>
-  </div>
+  <button (click)="scrollToSection('experience')" class="btn btn-primary">View Experience</button>
+  <a href="mailto:{{ info.email }}" class="btn btn-secondary">Let's Connect</a>
+</div>
 
   <div class="minimal-contact">
     <span>📍 {{ info.location }}</span>
@@ -31,11 +38,11 @@
 </div>
 
     <div class="hero-graphic">
-      <div class="floating-element lottie-placeholder">
-        <div class="graphic-circle"></div>
-          <ng-lottie [options]="options" width="400px" height="400px" style="position: relative; z-index: 2;"></ng-lottie>
-      </div>
-    </div>
+  <div class="floating-element">
+    <div class="graphic-circle"></div>
+    <ng-lottie [options]="options" width="100%" height="100%" style="position: relative; z-index: 2; display: block;"></ng-lottie>
+  </div>
+</div>
 
   </div>
 </header>

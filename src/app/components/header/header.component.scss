@@ -160,36 +160,51 @@
   }
 }
 
-/* Right Side Graphic & Animations */
+/* Push the graphic towards the right side of the screen on wide monitors */
 .hero-graphic {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; /* Aligns to the right instead of center */
   align-items: center;
+  width: 100%;
 }
 
+/* Scale up the container so the 100% Lottie fills it beautifully */
 .floating-element {
   width: 100%;
-  max-width: 400px;
-  height: 400px;
+  max-width: 650px; /* Increased to allow the animation to get massive on big screens */
+  height: 600px; /* Gives the vector plenty of vertical breathing room */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #334155;
-  font-family: monospace;
   animation: float 6s ease-in-out infinite;
 
   .graphic-circle {
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 500px; /* Scaled up the background glow to match the larger graphic */
+    height: 500px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(56,189,248,0.1) 0%, rgba(5,5,5,0) 70%);
+    background: radial-gradient(circle, rgba(56,189,248,0.08) 0%, rgba(5,5,5,0) 60%);
     z-index: 1;
   }
 }
 
+/* Ensure it centers properly on mobile devices */
+@media screen and (max-width: 900px) {
+  .hero-graphic {
+    justify-content: center; /* Drops back to center for mobile phones */
+  }
+  
+  .floating-element {
+    height: 400px; /* Shrinks the height so it doesn't take over the entire phone screen */
+    
+    .graphic-circle {
+      width: 350px;
+      height: 350px;
+    }
+  }
+}
 /* Keyframes */
 @keyframes pulse {
   to { box-shadow: 0 0 0 10px rgba(56, 189, 248, 0); }
@@ -248,8 +263,8 @@
 /* Scale up the graphic container */
 .floating-element {
   width: 100%;
-  max-width: 550px; /* Increased from 400px to fill the space */
-  height: 550px; /* Increased from 400px */
+  max-width: 750px; /* Increased from 400px to fill the space */
+  height: 750px; /* Increased from 400px */
   position: relative;
   display: flex;
   align-items: center;
@@ -258,11 +273,53 @@
 
   .graphic-circle {
     position: absolute;
-    width: 450px; /* Scaled up the background glow */
-    height: 450px;
+    width: 850px; /* Scaled up the background glow */
+    height: 850px;
     border-radius: 50%;
     /* Added a subtle blue/orange radial glow to match common tech illustrations */
     background: radial-gradient(circle, rgba(56,189,248,0.08) 0%, rgba(5,5,5,0) 60%);
     z-index: 1;
+  }
+}
+.top-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: flex-end; /* Aligns buttons to the right */
+  z-index: 10; /* Ensures it sits above the Lottie animation */
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-item {
+  background: transparent;
+  border: none;
+  color: #f8fafc;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 0;
+
+  &:hover {
+    color: #38bdf8;
+    transform: translateY(-2px);
+  }
+}
+
+/* Mobile responsiveness for the nav */
+@media screen and (max-width: 768px) {
+  .top-nav {
+    padding: 1.5rem;
+    justify-content: center;
+  }
+  .nav-links {
+    gap: 1.5rem;
   }
 }

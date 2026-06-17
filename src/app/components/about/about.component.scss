@@ -1,0 +1,97 @@
+/* Keep layout styles the same for continuity */
+.full-width-section {
+  width: 100%;
+  padding: 6rem 2rem;
+}
+
+.split-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 4rem;
+
+  @media screen and (max-width: 960px) {
+    /* Stacks graphic on top of text for mobile, as established */
+    flex-direction: column; 
+  }
+}
+
+.content-side {
+  flex: 1;
+  width: 100%;
+}
+
+/* Update the Graphic Side for the new image asset */
+.graphic-side {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Useful for advanced layered effects later */
+}
+
+/* Styles specifically for your profile photo */
+.profile-photo {
+  width: 100%;
+  max-width: 450px; /* Limits the max size of the photo on wide screens */
+  height: auto; /* Ensures aspect ratio is maintained */
+  border-radius: 12px; /* Smooth professional corners */
+  object-fit: cover; /* Prevents stretching and ensures your face is prominent */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); /* Adds depth to the photo against the dark background */
+}
+
+/* Replicate established accent color underlining for section title */
+.section-title {
+  font-size: 2.5rem;
+  color: #f8fafc;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40%;
+    height: 4px;
+    background: #38bdf8; /* Established accent color */
+    border-radius: 2px;
+  }
+}
+
+/* Rest of bio and competency styles (Kept the same) */
+.about-text p {
+    color: #94a3b8;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.core-competencies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.5rem;
+
+  .tech-tag {
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    color: #38bdf8;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+
+    &:hover {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: #38bdf8;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(56, 189, 248, 0.15);
+    }
+  }
+}

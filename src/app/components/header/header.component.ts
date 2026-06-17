@@ -18,4 +18,16 @@ export class HeaderComponent {
     loop: true,
     autoplay: true,
   };
+
+  // Add this new method
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
+  
 }

@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { PORTFOLIO_DATA } from '../../data/portfolio-data';
+import { CommonModule } from '@angular/common';
+import { LottieComponent, AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-about',
   standalone: true,
+  imports: [CommonModule, LottieComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
 export class AboutComponent {
-  summary = PORTFOLIO_DATA.personalInfo.summary;
+  options: AnimationOptions = {
+    path: 'assets/animations/about.json', // Download a new Lottie JSON for this space
+    loop: true,
+    autoplay: true,
+  };
 }
