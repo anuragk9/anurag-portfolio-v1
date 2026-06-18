@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LottieComponent, AnimationOptions } from 'ngx-lottie';
+import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, LottieComponent],
+  imports: [CommonModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })

@@ -1,0 +1,40 @@
+<section class="full-width-section" id="projects">
+  <h3 class="section-title center-title">Featured Projects</h3>
+
+  @for (project of projectsWithAnimations; track project.title; let i = $index) {
+    
+    <div class="project-wrapper" [class.reverse-layout]="i % 2 !== 0">
+      <div class="split-container">
+        
+        <div class="graphic-side">
+          <ng-lottie 
+            [options]="project.lottieOptions" 
+            width="100%" 
+            height="450px"
+            style="max-width: 550px;">
+          </ng-lottie>
+        </div>
+
+        <div class="content-side">
+          <h4 class="project-title">{{ project.title }}</h4>
+          <p class="project-desc">{{ project.description }}</p>
+          
+          <div class="core-competencies">
+            @for (tech of project.technologies; track tech) {
+              <span class="tech-tag">{{ tech }}</span>
+            }
+          </div>
+
+          @if (project.link) {
+            <div class="project-links">
+              <a [href]="project.link" target="_blank" class="btn btn-primary" style="margin-top: 2rem;">
+                View Project ↗
+              </a>
+            </div>
+          }
+        </div>
+
+      </div>
+    </div>
+  }
+</section>

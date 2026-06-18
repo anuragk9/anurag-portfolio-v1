@@ -65,7 +65,23 @@ export const PORTFOLIO_DATA = {
     }
   ],
   education: [
-    { degree: 'MCA', institution: 'SASTRA University', year: '2021', details: 'CGPA: 8.085' },
-    { degree: 'BCA', institution: 'CSJM University', year: '2018', details: '' }
+    { degree: 'Master of Computer Applications', institution: 'SASTRA University', year: '2018-2021', details: 'CGPA: 8.085' },
+    { degree: 'Bachelor  of Computer Applications', institution: 'CSJM University', year: '2015-2018', details: '' }
+  ],
+  projects: [
+    {
+      title: 'eLibrary Application',
+      description: 'An end-to-end Android mobile application architected to streamline library operations, featuring automated book issuing, real-time stock inventory tracking, and seamless NoSQL data synchronization.',
+      technologies: ['Android', 'Java', 'NoSQL', 'Mobile UI'],
+      link: null,
+      lottiePath: 'assets/animations/elibrary.json'
+    },
+    {
+      title: 'eLibrary Application 2',
+      description: 'An end-to-end Android mobile application architected to streamline library operations, featuring automated book issuing, real-time stock inventory tracking, and seamless NoSQL data synchronization.',
+      technologies: ['Android', 'Java', 'NoSQL', 'Mobile UI'],
+      link: null,
+      lottiePath: 'assets/animations/elibrary.json'
+    }
   ]
 };

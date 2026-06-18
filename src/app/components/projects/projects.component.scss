@@ -1,0 +1,113 @@
+.full-width-section {
+  width: 100%;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title.center-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #f8fafc;
+  margin-bottom: 5rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #38bdf8;
+    border-radius: 2px;
+  }
+}
+
+/* Individual Project Spacing */
+.project-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 8rem; /* Large gap between different projects */
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  /* The magic that flips the layout for alternating projects */
+  &.reverse-layout .split-container {
+    flex-direction: row-reverse;
+  }
+}
+
+.split-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 4rem;
+
+  @media screen and (max-width: 960px) {
+    /* On mobile, ALWAYS stack image on top, ignoring the reverse logic */
+    flex-direction: column !important; 
+  }
+}
+
+.content-side, .graphic-side {
+  flex: 1;
+  width: 100%;
+}
+
+.graphic-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Project Image Styling (Matched to About Section) */
+.project-photo {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(56, 189, 248, 0.2);
+  }
+}
+
+/* Typography & Tech Tags */
+.project-title {
+  font-size: 2rem;
+  color: #f8fafc;
+  margin-bottom: 1.5rem;
+}
+
+.project-desc {
+  color: #94a3b8;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.core-competencies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  .tech-tag {
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    color: #38bdf8;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+}
