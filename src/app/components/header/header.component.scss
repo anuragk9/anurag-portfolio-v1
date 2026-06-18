@@ -286,15 +286,34 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2rem 4rem;
+  padding: 1.5rem 2rem;
   display: flex;
-  justify-content: flex-end; /* Aligns buttons to the right */
-  z-index: 10; /* Ensures it sits above the Lottie animation */
+  justify-content: flex-end;
+  z-index: 10;
+  
+  /* Mobile Fix: Allows horizontal scrolling if the screen is too narrow */
+  @media screen and (max-width: 768px) {
+    justify-content: flex-start;
+    padding: 1rem;
+    overflow-x: auto; /* Enables swiping left/right */
+    white-space: nowrap; /* Prevents buttons from wrapping to the next line */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    
+    /* Hides the ugly scrollbar but keeps the functionality */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
 
 .nav-links {
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
+  
+  @media screen and (max-width: 768px) {
+    gap: 1.5rem;
+    padding-right: 1rem; /* Gives breathing room at the end of the scroll */
+  }
 }
 
 .nav-item {
@@ -321,5 +340,17 @@
   }
   .nav-links {
     gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .floating-element {
+    height: 350px; /* Strict height limit for mobile */
+    max-width: 100%;
+    
+    .graphic-circle {
+      width: 300px;
+      height: 300px;
+    }
   }
 }

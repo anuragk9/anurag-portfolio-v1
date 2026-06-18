@@ -77,11 +77,11 @@ export const PORTFOLIO_DATA = {
       lottiePath: 'assets/animations/elibrary.json'
     },
     {
-      title: 'eLibrary Application 2',
-      description: 'An end-to-end Android mobile application architected to streamline library operations, featuring automated book issuing, real-time stock inventory tracking, and seamless NoSQL data synchronization.',
-      technologies: ['Android', 'Java', 'NoSQL', 'Mobile UI'],
+      title: 'Sketch2Code',
+      description: 'An AI-powered utility that leverages Computer Vision to bridge the gap between design and development. I engineered the core conversion logic using Python, parsing bounding box data from a YOLOv3 object detection model to automatically generate fully responsive Bootstrap HTML code directly from hand-drawn wireframes.',
+      technologies: ['Python', 'Flask API', 'YOLOv3', 'Bootstrap HTML'],
       link: null,
-      lottiePath: 'assets/animations/elibrary.json'
+      lottiePath: 'assets/animations/sketch2code.json'
     }
   ]
 };

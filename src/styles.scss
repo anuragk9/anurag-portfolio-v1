@@ -64,3 +64,60 @@ html {
   /* Adds a 50px buffer so the section title isn't glued to the top of the monitor when you arrive */
   scroll-padding-top: 50px; 
 }
+/* --- src/styles.scss --- */
+
+/* 1. Fluid Typography for Section Titles */
+.section-title {
+  /* Shrinks to 1.8rem on mobile, scales dynamically, caps at 2.5rem on large screens */
+  font-size: clamp(1.8rem, 4vw, 2.5rem) !important; 
+}
+
+/* Fluid Typography for standard text */
+p {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+}
+
+h3, h4 {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+/* --- src/styles.scss --- */
+
+/* 2. Global Constraining Wrapper */
+.full-width-section {
+  width: 100%;
+  /* Fluid padding: less padding on mobile, more on desktop */
+  padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 5vw, 2rem); 
+  display: flex;
+  justify-content: center; /* Centers the inner container */
+}
+
+/* Apply this class inside every section to hold the content */
+.container, .split-container {
+  width: 100%;
+  max-width: 1200px; /* This is the "firewall" that stops the app from stretching too wide */
+  margin: 0 auto;
+}
+
+/* --- src/styles.scss --- */
+
+/* 3. Global Responsive Stacking */
+@media screen and (max-width: 960px) {
+  /* Forces split containers to stack vertically on tablets and phones */
+  .split-container {
+    flex-direction: column !important;
+    gap: 2.5rem !important;
+    text-align: center; /* Centers text nicely on mobile */
+  }
+
+  /* Centers the blue underline on section titles when text is centered */
+  .section-title::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* Centers tech tags on mobile */
+  .core-competencies, .project-tech-list {
+    justify-content: center;
+  }
+}
